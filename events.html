@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US"></html>
+    <head>
+        <Title>events practise</Title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            button {
+                margin:10px
+            }
+        </style>
+    </head>
+    <button>Change colour</button>
+    <button onclick="alert('this is an embedded event handler, right in the button html.');">
+        Press me(alert)
+    </button>
+ 
+      
+    <script>
+        const btn = document.querySelector("button");
+
+        function random(number) {
+        return Math.floor(Math.random() * (number + 1));
+        }
+
+        btn.addEventListener("focus", () => {
+        const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+        });
+
+
+        const btn2= document.querySelector("button");
+
+        function random(number) {
+        return Math.floor(Math.random() * (number + 1));
+        }
+
+        function bgChange(e) {
+        const rndCol = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+        e.target.style.backgroundColor = rndCol;
+        console.log(e);
+        }
+
+        btn2.addEventListener("click", bgChange);
+
+    </script>
+</html>
